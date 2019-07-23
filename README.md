@@ -11,7 +11,7 @@ Usage :
 
 ```swift
 Grid {
-		some View
+	some View
 }
 ```
 
@@ -29,8 +29,10 @@ Grid {
 }
 ```
 
+It will looks like exactly the same in UICollectionView without changing UICollectionViewFlowLayout
 
+![](http://wx2.sinaimg.cn/mw690/70a5dc58gy1g5a5cbd42rg20b40jthdu.gif)
 
-known issue
+Known issue
 
-has huge performance problem, but it work great. I will continue when SwiftUI b5 release
+There has huge performance problem, but it still work great. I will fix it when SwiftUI b5 release
