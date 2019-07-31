@@ -9,14 +9,6 @@
 import Combine
 import SwiftUI
 import UIKit
-final class WebImage: BindableObject {
-    let willChange = PassthroughSubject<UIImage, Never>()
-
-	var image: UIImage? {
-        willSet {
-			if let image = newValue {
-				willChange.send(image)
-			}
-        }
-    }
+final class WebImage: ObservableObject {
+    @Published var image: UIImage? = nil
 }

@@ -25,12 +25,12 @@ extension ViewExpand {
 	}
 }
 
-extension ForEach: ViewExpand {
+extension ForEach: ViewExpand where Content: View {
 	func expand() -> [AnyView] {
 		var viewList: [AnyView] = []
 		var index = data.startIndex
 		while index != data.endIndex {//先不考虑初始化性能, 先展开再说
-			let view = content(data[index].identifiedValue)
+			let view = content(data[index])
 			if let view = view as? ViewExpand {
 				viewList.append(contentsOf: view.expand())
 			} else {

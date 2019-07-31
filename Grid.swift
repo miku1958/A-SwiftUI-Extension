@@ -14,20 +14,114 @@ IdentifierValuePairs
 protocol CollectionUpdate: class {
 	func tryUpdate(indexPath: IndexPath)
 }
-struct Grid<Selection, Content>: UIViewRepresentable where Selection : SelectionManager, Content : View {
-	var selection: Binding<Selection>?
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+public struct Grid<SelectionValue, Content> where SelectionValue : Hashable, Content : View {
+	
+	var selection: Binding<SelectionValue?>?
+	var selectionSet: Binding<Set<SelectionValue>>?
 	var viewList: Content!
 	let axis: Axis
 	
+	public typealias UIViewType = UICollectionView
+	let collectionView = UICollectionView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)), collectionViewLayout: UICollectionViewFlowLayout())
+	/// Creates a List that supports multiple selection.
+	///
+	/// - Parameter selection: A binding to a set that identifies the selected
+	///   rows.
+	///
+	/// - See Also: `View.selectionValue` which gives an identifier to the rows.
+	///
+	/// - Note: On iOS and tvOS, you must explicitly put the `List` into Edit
+	///   Mode for the selection to apply.
 	@available(watchOS, unavailable)
-	public init(axis: Axis = .vertical, selection: Binding<Selection>?, @ViewBuilder content: () -> Content) {
+	public init(_ axis: Axis = .vertical, selection: Binding<Set<SelectionValue>>?, @ViewBuilder content: () -> Content) {
+		
+		self.axis = axis
+		self.selectionSet = selection
+		self.viewList = content()
+	}
+	
+	/// Creates a List that supports optional single selection.
+	///
+	/// - Parameter selection: A binding to the optionally selected row.
+	///
+	/// - See Also: `View.selectionValue` which gives an identifier to the rows.
+	///
+	/// - Note: On iOS and tvOS, you must explicitly put the `List` into Edit
+	///   Mode for the selection to apply.
+	@available(watchOS, unavailable)
+	public init(_ axis: Axis = .vertical, selection: Binding<SelectionValue?>?, @ViewBuilder content: () -> Content) {
+		
 		self.axis = axis
 		self.selection = selection
 		self.viewList = content()
 	}
+}
+
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension Grid {
 	
+	/// Creates a List that computes its rows on demand from an underlying
+	/// collection of identified data.
 	@available(watchOS, unavailable)
-	public init<Data, ID, RowContent>(_ data: Data, id: KeyPath<Data.Element, ID>, axis: Axis = .vertical, selection: Binding<Selection>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<IdentifierValuePairs<Data, ID>, HStack<RowContent>>, Data : RandomAccessCollection, ID : Hashable, RowContent : View {
+	public init<Data, RowContent>(_ axis: Axis = .vertical, data: Data, selection: Binding<Set<SelectionValue>>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, Data.Element.ID, HStack<RowContent>>, Data : RandomAccessCollection, RowContent : View, Data.Element : Identifiable {
+		self.axis = axis
+		self.selectionSet = selection
+		self.viewList = ForEach(data) { element in
+			HStack {
+				rowContent(element)
+			}
+		}
+	}
+	
+	/// Creates a List that identifies its rows based on the `id` key path to a
+	/// property on an underlying data element.
+	@available(watchOS, unavailable)
+	public init<Data, ID, RowContent>(_ axis: Axis = .vertical, data: Data, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, ID, HStack<RowContent>>, Data : RandomAccessCollection, ID : Hashable, RowContent : View {
+		self.axis = axis
+		self.selectionSet = selection
+		self.viewList = ForEach(data, id: id) { element in
+			HStack {
+				rowContent(element)
+			}
+		}
+	}
+	
+	/// Creates a List that computes views on demand over a *constant* range.
+	///
+	/// This instance only reads the initial value of `data` and so it does not
+	/// need to identify views across updates.
+	///
+	/// To compute views on demand over a dynamic range use
+	/// `List(_:id:selection:content:)`.
+	@available(watchOS, unavailable)
+	public init<RowContent>(_ axis: Axis = .vertical, data: Range<Int>, selection: Binding<Set<SelectionValue>>?, @ViewBuilder rowContent: @escaping (Int) -> RowContent) where Content == ForEach<Range<Int>, Int, HStack<RowContent>>, RowContent : View {
+		self.axis = axis
+		self.selectionSet = selection
+		self.viewList = ForEach(data) { element in
+			HStack {
+				rowContent(element)
+			}
+		}
+	}
+	
+	/// Creates a List that computes its rows on demand from an underlying
+	/// collection of identified data.
+	@available(watchOS, unavailable)
+	public init<Data, RowContent>(_ axis: Axis = .vertical, data: Data, selection: Binding<SelectionValue?>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, Data.Element.ID, HStack<RowContent>>, Data : RandomAccessCollection, RowContent : View, Data.Element : Identifiable {
+		self.axis = axis
+		self.selection = selection
+		self.viewList = ForEach(data) { element in
+			HStack {
+				rowContent(element)
+			}
+		}
+	}
+	
+	/// Creates a List that identifies its rows based on the `id` key path to a
+	/// property on an underlying data element.
+	@available(watchOS, unavailable)
+	public init<Data, ID, RowContent>(_ axis: Axis = .vertical, data: Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, ID, HStack<RowContent>>, Data : RandomAccessCollection, ID : Hashable, RowContent : View {
 		self.axis = axis
 		self.selection = selection
 		self.viewList = ForEach(data, id: id) { element in
@@ -37,9 +131,74 @@ struct Grid<Selection, Content>: UIViewRepresentable where Selection : Selection
 		}
 	}
 	
-	typealias UIViewType = UICollectionView
-	let collectionView = UICollectionView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)), collectionViewLayout: UICollectionViewFlowLayout())
-	func makeUIView(context: Context) -> UIViewType {
+	/// Creates a List that computes views on demand over a *constant* range.
+	///
+	/// This instance only reads the initial value of `data` and so it does not
+	/// need to identify views across updates.
+	///
+	/// To compute views on demand over a dynamic range use
+	/// `List(_:id:selection:content:)`.
+	@available(watchOS, unavailable)
+	public init<RowContent>(_ axis: Axis = .vertical, data: Range<Int>, selection: Binding<SelectionValue?>?, @ViewBuilder rowContent: @escaping (Int) -> RowContent) where Content == ForEach<Range<Int>, Int, HStack<RowContent>>, RowContent : View {
+		self.axis = axis
+		self.selection = selection
+		self.viewList = ForEach(data) { element in
+			HStack {
+				rowContent(element)
+			}
+		}
+	}
+}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension Grid where SelectionValue == Never {
+	
+	public init(_ axis: Axis = .vertical, @ViewBuilder content: () -> Content) {
+		
+		self.axis = axis
+		self.viewList = content()
+	}
+	
+	/// Creates a List that computes its rows on demand from an underlying
+	/// collection of identified data.
+	public init<Data, RowContent>(_ axis: Axis = .vertical, data: Data, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, Data.Element.ID, HStack<RowContent>>, Data : RandomAccessCollection, RowContent : View, Data.Element : Identifiable {
+		self.axis = axis
+		self.viewList = ForEach(data) { element in
+			HStack {
+				rowContent(element)
+			}
+		}
+	}
+	
+	/// Creates a List that identifies its rows based on the `id` key path to a
+	/// property on an underlying data element.
+	public init<Data, ID, RowContent>(_ axis: Axis = .vertical, data: Data, id: KeyPath<Data.Element, ID>, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, ID, HStack<RowContent>>, Data : RandomAccessCollection, ID : Hashable, RowContent : View {
+		self.axis = axis
+		self.viewList = ForEach(data, id: id) { element in
+			HStack {
+				rowContent(element)
+			}
+		}
+	}
+	
+	/// Creates a List that computes views on demand over a *constant* range.
+	///
+	/// This instance only reads the initial value of `data` and so it does not
+	/// need to identify views across updates.
+	///
+	/// To compute views on demand over a dynamic range use
+	/// `List(_:id:content:)`.
+	public init<RowContent>(_ axis: Axis = .vertical, data: Range<Int>, @ViewBuilder rowContent: @escaping (Int) -> RowContent) where Content == ForEach<Range<Int>, Int, HStack<RowContent>>, RowContent : View {
+		self.axis = axis
+		self.viewList = ForEach(data) { element in
+			HStack {
+				rowContent(element)
+			}
+		}
+	}
+}
+extension Grid: UIViewRepresentable {
+	
+	public func makeUIView(context: Context) -> UIViewType {
 		let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
 		
 		collectionView.delegate = context.coordinator
@@ -52,7 +211,6 @@ struct Grid<Selection, Content>: UIViewRepresentable where Selection : Selection
 		case .vertical:
 			layout.scrollDirection = .vertical
 			collectionView.alwaysBounceVertical = true
-		@unknown default: break
 		}
 		
 		collectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.identifier)
@@ -61,13 +219,13 @@ struct Grid<Selection, Content>: UIViewRepresentable where Selection : Selection
 		collectionView.backgroundColor = .systemBackground
 		return collectionView
 	}
-	func updateUIView(_ uiView: UIViewType, context: Context) {
+	public func updateUIView(_ uiView: UIViewType, context: Context) {
 		uiView.reloadData()//先直接reload
 	}
-	func makeCoordinator() -> Coordinator<Selection, Content> {
+	public func makeCoordinator() -> Coordinator<SelectionValue, Content> {
 		Coordinator(self)
 	}
-	class Coordinator<Selection, Content>: NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CollectionUpdate where Selection : SelectionManager, Content : View {
+	public class Coordinator<SelectionValue, Content>: NSObject, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CollectionUpdate where SelectionValue : Hashable, Content : View {
 		func tryUpdate(indexPath: IndexPath) {
 			if let cell = parent.collectionView.cellForItem(at: indexPath),
 				cell.frame.size != self.collectionView(parent.collectionView, layout: parent.collectionView.collectionViewLayout, sizeForItemAt: indexPath) {
@@ -76,17 +234,17 @@ struct Grid<Selection, Content>: UIViewRepresentable where Selection : Selection
 			}
 		}
 		
-		var parent: Grid<Selection, Content>
+		var parent: Grid<SelectionValue, Content>
 		
 		var sections: [[AnyView]]!
 		var sectionsExtra: [[AnyView?]] = []
 		
-		init(_ parent: Grid<Selection, Content>) {
+		init(_ parent: Grid<SelectionValue, Content>) {
 			self.parent = parent
 		}
-
+		
 		// MARK: - UICollectionViewDataSource.cell
-		func numberOfSections(in collectionView: UICollectionView) -> Int {
+		public func numberOfSections(in collectionView: UICollectionView) -> Int {
 			if sections != nil { return sections.count }
 			sections = []
 			sectionsExtra = []
@@ -119,11 +277,11 @@ struct Grid<Selection, Content>: UIViewRepresentable where Selection : Selection
 			
 			return sections.count
 		}
-		func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 			return sections[section].count
 		}
 		
-		func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 			var size: CGSize
 			if (collectionViewLayout as! UICollectionViewFlowLayout).scrollDirection == .vertical {
 				size = UIHostingController(rootView: sections[indexPath.section][indexPath.row].anyView).sizeThatFits(in: CGSize(width: collectionView.frame.width, height: CGFloat.greatestFiniteMagnitude))
@@ -138,7 +296,7 @@ struct Grid<Selection, Content>: UIViewRepresentable where Selection : Selection
 			}
 			return size
 		}
-		func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 			let anyView = sections[indexPath.section][indexPath.row]
 			
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.identifier, for: indexPath) as! Cell
@@ -150,15 +308,11 @@ struct Grid<Selection, Content>: UIViewRepresentable where Selection : Selection
 		}
 		
 		// MARK: - UICollectionViewDelegate.SelectItem
-		func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-			parent.selection?.value.select(indexPath as! Selection.SelectionValue)
-		}
-		func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
-			parent.selection?.value.deselect(indexPath as! Selection.SelectionValue)
-			return true
+		public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+			parent.selection?.value = indexPath as? SelectionValue
 		}
 		// MARK: - UICollectionViewDelegate.headerFooter
-		func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+		public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 			if let view = sectionsExtra[section].first??.anyView {
 				var size: CGSize
 				if (collectionViewLayout as! UICollectionViewFlowLayout).scrollDirection == .vertical {
@@ -177,7 +331,7 @@ struct Grid<Selection, Content>: UIViewRepresentable where Selection : Selection
 				return .zero
 			}
 		}
-		func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+		public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
 			if let view = sectionsExtra[section].last??.anyView {
 				var size: CGSize
 				if (collectionViewLayout as! UICollectionViewFlowLayout).scrollDirection == .vertical {
@@ -196,7 +350,7 @@ struct Grid<Selection, Content>: UIViewRepresentable where Selection : Selection
 				return .zero
 			}
 		}
-		func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 			let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ReusableView.identifier, for: indexPath) as! ReusableView
 			if kind == UICollectionView.elementKindSectionHeader, let rootView = sectionsExtra[indexPath.section].first??.anyView {
 				view.hosting = UIHostingController(rootView: rootView)
@@ -205,11 +359,6 @@ struct Grid<Selection, Content>: UIViewRepresentable where Selection : Selection
 				view.hosting = UIHostingController(rootView: rootView)
 			}
 			return view
-		}
-		
-		// MARK: - UICollectionViewDelegate.MultipleSelection
-		func collectionView(_ collectionView: UICollectionView, shouldBeginMultipleSelectionInteractionAt indexPath: IndexPath) -> Bool {
-			return parent.selection?.value.allowsMultipleSelection ?? false
 		}
 	}
 }
@@ -224,7 +373,7 @@ extension Grid {
 				}
 			}
 		}
-
+		
 		override func layoutSubviews() {
 			super.layoutSubviews()
 			hosting?.view.frame = bounds
@@ -260,18 +409,4 @@ extension Grid {
 			}
 		}
 	}
-}
-
-extension Grid where Selection == Never {
-	@available(watchOS, unavailable)
-	init(axis: Axis = .vertical, @ViewBuilder content: () -> Content) {
-		self.axis = axis
-		self.viewList = content()
-	}
-	
-	//
-	//    /// Creates a List that identifies its rows based on the `id` key path to a
-	//    /// property on an underlying data element.
-	//    public init<Data, ID, RowContent>(_ data: Data, id: KeyPath<Data.Element, ID>, rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<IdentifierValuePairs<Data, ID>, HStack<RowContent>>, Data : RandomAccessCollection, ID : Hashable, RowContent : View
-	
 }
