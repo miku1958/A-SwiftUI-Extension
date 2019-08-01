@@ -23,16 +23,22 @@ struct AnyViewStorage<Content>: AnyViewStorageProtocol where Content: View {
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct AnyView {
 	let stroage: AnyViewStorageProtocol
-	var needUpdate: Bool = true
+	@inline(__always)  mutating func hostingCache() -> UIHostingController<SwiftUI.AnyView?> {
+		if _hostingCache == nil {
+			_hostingCache = UIHostingController(rootView: anyView)
+		}
+		return _hostingCache
+	}
+	var _hostingCache: UIHostingController<SwiftUI.AnyView?>!
 	
     /// Create an instance that type-erases `view`.
 	public init<V>(_ view: V) where V : View {
 		stroage = AnyViewStorage(content: view)
 	}
-	var anyView: SwiftUI.AnyView? {
+	lazy var anyView: SwiftUI.AnyView? = {
 		if stroage.value is EmptyView {
 			return nil
 		}
 		return stroage.anyView
-	}
+	}()
 }
