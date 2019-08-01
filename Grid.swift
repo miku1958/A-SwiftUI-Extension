@@ -23,26 +23,29 @@ public struct Grid<SelectionValue, Content> where SelectionValue : Hashable, Con
 	var selectionSet: Binding<Set<SelectionValue>>?
 	var viewList: Content!
 	let axis: Axis
+	private let defaultFrame = CGRect(origin: .zero, size: CGSize(width: 100, height: 100))
 	
 	public typealias UIViewType = UICollectionView
-	let collectionView = UICollectionView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)), collectionViewLayout: UICollectionViewFlowLayout())
+	let collectionView: UICollectionView
 
-	public init(_ axis: Axis = .vertical, selection: Binding<Set<SelectionValue>>?, @ViewBuilder content: () -> Content) {
+	public init(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), selection: Binding<Set<SelectionValue>>?, @ViewBuilder content: () -> Content) {
 		
 		self.axis = axis
 		self.selectionSet = selection
 		self.viewList = content()
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
-	public init(_ axis: Axis = .vertical, selection: Binding<SelectionValue?>?, @ViewBuilder content: () -> Content) {
+	public init(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), selection: Binding<SelectionValue?>?, @ViewBuilder content: () -> Content) {
 		
 		self.axis = axis
 		self.selection = selection
 		self.viewList = content()
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
 }
 
 extension Grid {
-	public init<Data, RowContent>(_ axis: Axis = .vertical, data: Data, selection: Binding<Set<SelectionValue>>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, Data.Element.ID, HStack<RowContent>>, Data : RandomAccessCollection, RowContent : View, Data.Element : Identifiable {
+	public init<Data, RowContent>(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), data: Data, selection: Binding<Set<SelectionValue>>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, Data.Element.ID, HStack<RowContent>>, Data : RandomAccessCollection, RowContent : View, Data.Element : Identifiable {
 		self.axis = axis
 		self.selectionSet = selection
 		self.viewList = ForEach(data) { element in
@@ -50,8 +53,9 @@ extension Grid {
 				rowContent(element)
 			}
 		}
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
-	public init<Data, ID, RowContent>(_ axis: Axis = .vertical, data: Data, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, ID, HStack<RowContent>>, Data : RandomAccessCollection, ID : Hashable, RowContent : View {
+	public init<Data, ID, RowContent>(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), data: Data, id: KeyPath<Data.Element, ID>, selection: Binding<Set<SelectionValue>>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, ID, HStack<RowContent>>, Data : RandomAccessCollection, ID : Hashable, RowContent : View {
 		self.axis = axis
 		self.selectionSet = selection
 		self.viewList = ForEach(data, id: id) { element in
@@ -59,9 +63,10 @@ extension Grid {
 				rowContent(element)
 			}
 		}
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
 	
-	public init<RowContent>(_ axis: Axis = .vertical, data: Range<Int>, selection: Binding<Set<SelectionValue>>?, @ViewBuilder rowContent: @escaping (Int) -> RowContent) where Content == ForEach<Range<Int>, Int, HStack<RowContent>>, RowContent : View {
+	public init<RowContent>(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), data: Range<Int>, selection: Binding<Set<SelectionValue>>?, @ViewBuilder rowContent: @escaping (Int) -> RowContent) where Content == ForEach<Range<Int>, Int, HStack<RowContent>>, RowContent : View {
 		self.axis = axis
 		self.selectionSet = selection
 		self.viewList = ForEach(data) { element in
@@ -69,9 +74,10 @@ extension Grid {
 				rowContent(element)
 			}
 		}
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
 	
-	public init<Data, RowContent>(_ axis: Axis = .vertical, data: Data, selection: Binding<SelectionValue?>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, Data.Element.ID, HStack<RowContent>>, Data : RandomAccessCollection, RowContent : View, Data.Element : Identifiable {
+	public init<Data, RowContent>(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), data: Data, selection: Binding<SelectionValue?>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, Data.Element.ID, HStack<RowContent>>, Data : RandomAccessCollection, RowContent : View, Data.Element : Identifiable {
 		self.axis = axis
 		self.selection = selection
 		self.viewList = ForEach(data) { element in
@@ -79,9 +85,10 @@ extension Grid {
 				rowContent(element)
 			}
 		}
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
 	
-	public init<Data, ID, RowContent>(_ axis: Axis = .vertical, data: Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, ID, HStack<RowContent>>, Data : RandomAccessCollection, ID : Hashable, RowContent : View {
+	public init<Data, ID, RowContent>(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), data: Data, id: KeyPath<Data.Element, ID>, selection: Binding<SelectionValue?>?, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, ID, HStack<RowContent>>, Data : RandomAccessCollection, ID : Hashable, RowContent : View {
 		self.axis = axis
 		self.selection = selection
 		self.viewList = ForEach(data, id: id) { element in
@@ -89,9 +96,10 @@ extension Grid {
 				rowContent(element)
 			}
 		}
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
 	
-	public init<RowContent>(_ axis: Axis = .vertical, data: Range<Int>, selection: Binding<SelectionValue?>?, @ViewBuilder rowContent: @escaping (Int) -> RowContent) where Content == ForEach<Range<Int>, Int, HStack<RowContent>>, RowContent : View {
+	public init<RowContent>(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), data: Range<Int>, selection: Binding<SelectionValue?>?, @ViewBuilder rowContent: @escaping (Int) -> RowContent) where Content == ForEach<Range<Int>, Int, HStack<RowContent>>, RowContent : View {
 		self.axis = axis
 		self.selection = selection
 		self.viewList = ForEach(data) { element in
@@ -99,46 +107,51 @@ extension Grid {
 				rowContent(element)
 			}
 		}
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
 }
 
 extension Grid where SelectionValue == Never {
 	
-	public init(_ axis: Axis = .vertical, @ViewBuilder content: () -> Content) {
+	public init(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), @ViewBuilder content: () -> Content) {
 		
 		self.axis = axis
 		self.viewList = content()
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
 	
 	/// Creates a List that computes its rows on demand from an underlying
 	/// collection of identified data.
-	public init<Data, RowContent>(_ axis: Axis = .vertical, data: Data, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, Data.Element.ID, HStack<RowContent>>, Data : RandomAccessCollection, RowContent : View, Data.Element : Identifiable {
+	public init<Data, RowContent>(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), data: Data, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, Data.Element.ID, HStack<RowContent>>, Data : RandomAccessCollection, RowContent : View, Data.Element : Identifiable {
 		self.axis = axis
 		self.viewList = ForEach(data) { element in
 			HStack {
 				rowContent(element)
 			}
 		}
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
 	
 	/// Creates a List that identifies its rows based on the `id` key path to a
 	/// property on an underlying data element.
-	public init<Data, ID, RowContent>(_ axis: Axis = .vertical, data: Data, id: KeyPath<Data.Element, ID>, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, ID, HStack<RowContent>>, Data : RandomAccessCollection, ID : Hashable, RowContent : View {
+	public init<Data, ID, RowContent>(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), data: Data, id: KeyPath<Data.Element, ID>, @ViewBuilder rowContent: @escaping (Data.Element) -> RowContent) where Content == ForEach<Data, ID, HStack<RowContent>>, Data : RandomAccessCollection, ID : Hashable, RowContent : View {
 		self.axis = axis
 		self.viewList = ForEach(data, id: id) { element in
 			HStack {
 				rowContent(element)
 			}
 		}
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
 	
-	public init<RowContent>(_ axis: Axis = .vertical, data: Range<Int>, @ViewBuilder rowContent: @escaping (Int) -> RowContent) where Content == ForEach<Range<Int>, Int, HStack<RowContent>>, RowContent : View {
+	public init<RowContent>(_ axis: Axis = .vertical, layout: UICollectionViewLayout = UICollectionViewFlowLayout(), data: Range<Int>, @ViewBuilder rowContent: @escaping (Int) -> RowContent) where Content == ForEach<Range<Int>, Int, HStack<RowContent>>, RowContent : View {
 		self.axis = axis
 		self.viewList = ForEach(data) { element in
 			HStack {
 				rowContent(element)
 			}
 		}
+		self.collectionView = UICollectionView(frame: defaultFrame, collectionViewLayout: layout)
 	}
 }
 extension Grid: UIViewRepresentable {
@@ -330,8 +343,12 @@ extension Grid {
 		var hosting: Hosting? {
 			didSet {
 				if let view = hosting?.view {
+					contentView.subviews.forEach {
+						$0.removeFromSuperview()
+					}
 					contentView.addSubview(view)
 					view.frame = contentView.bounds
+					
 				}
 			}
 		}
@@ -339,7 +356,6 @@ extension Grid {
 		override func layoutSubviews() {
 			super.layoutSubviews()
 			hosting?.view.frame = contentView.bounds
-			contentView.subviews.filter { $0 != hosting?.view }.forEach { $0.removeFromSuperview() }
 		}
 		class Hosting: UIHostingController<SwiftUI.AnyView?> {
 			var indexPath: IndexPath!
