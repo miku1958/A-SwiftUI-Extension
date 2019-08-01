@@ -5,7 +5,7 @@ A SwiftUI extension including truly Grid with UICollectionView
 
 ## Version 0.1
 
-### Grid implemented by UICollectionView and UICollectionViewFlowLayout
+### Grid implemented by UICollectionView
 
 Usage :
 
@@ -15,24 +15,27 @@ Grid {
 }
 ```
 
-such as code in demo:
+such as :
 
 ```swift
 Grid {
 	ForEach(0..<Character.list.count) { index  in
 		DisplayItem(index: index, name: Character.list[index].name, filllWidth: false).environmentObject(self.createWebImage(from: Character.list[index].profile))
 	}
-
-	ForEach(0..<Character.list.count) { index  in
-		DisplayItem(index: index, name: Character.list[index].name, filllWidth: true).environmentObject(self.createWebImage(from: Character.list[index].profile))
-	}
 }
 ```
 
-It will looks like exactly the same in UICollectionView without changing UICollectionViewFlowLayout
+It will looks like exactly the same in UICollectionView
 
-![](http://wx2.sinaimg.cn/mw690/70a5dc58gy1g5a5cbd42rg20b40jthdu.gif)
+![](http://wx3.sinaimg.cn/mw690/70a5dc58gy1g5kj8xew87g208c0euqv8.gif)
 
-Known issue
+Or you can use other custom UICollectionLayout you prefer like:
 
-There has huge performance problem, but it still work great. I will fix it when SwiftUI b5 release
+```swift
+Grid(layout: CustomLayout()) {
+	ForEach(0 ..< Character.list.count) { index  in
+		...
+	}
+```
+
+Otherwise, Grid will use UICollectionFlowLayout as default layout
