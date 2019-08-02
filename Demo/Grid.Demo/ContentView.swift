@@ -72,8 +72,8 @@ struct ContentView: View {
 		return webImage
 	}
     var body: some View {
-		Grid(layout: UICollectionViewLayout()) {
-			ForEach(0 ..< Character.list.count) { index  in
+		Grid() {
+			ForEach(0 ..< 1000) { index  in
 				DisplayItem(index: index, char: Character.list[index % Character.list.count]).environmentObject(self.createWebImage(from: Character.list[index % Character.list.count].profile))
 			}
 		}
