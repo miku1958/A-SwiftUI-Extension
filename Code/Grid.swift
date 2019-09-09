@@ -268,7 +268,7 @@ extension Grid: UIViewRepresentable {
 		}
 		// MARK: - UICollectionViewDelegate.SelectItem
 		public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-			parent.selection?.value = indexPath as? SelectionValue
+			parent.selection?.wrappedValue = indexPath as? SelectionValue
 		}
 		// MARK: - UICollectionViewDelegate.headerFooter
 		public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
