@@ -25,7 +25,6 @@
 		FF26449422E739900043EAB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF26449322E739900043EAB3 /* Preview Assets.xcassets */; };
 		FF26449722E739900043EAB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF26449522E739900043EAB3 /* LaunchScreen.storyboard */; };
 		FF2644AC22E73A230043EAB3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2644AB22E73A230043EAB3 /* Character.swift */; };
-		FF2824452326372700383093 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2824442326372700383093 /* View.swift */; };
 		FF2824462326377A00383093 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2824442326372700383093 /* View.swift */; };
 		FF28244A23263A1900383093 /* GeometryProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28244923263A1900383093 /* GeometryProxy.swift */; };
 		FF28244B23263A1900383093 /* GeometryProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28244923263A1900383093 /* GeometryProxy.swift */; };
@@ -57,7 +56,6 @@
 		FF9A53592330C70D003C2B61 /* AnyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8EFFF22F328630089D8ED /* AnyView.swift */; };
 		FF9A535A2330C70D003C2B61 /* AnyViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8F00022F328630089D8ED /* AnyViewBuilder.swift */; };
 		FF9B37C22329DE9D00F1F11A /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B37C12329DE9D00F1F11A /* LazyView.swift */; };
-		FF9B37CD232A441500F1F11A /* SelectionNavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B37CC232A441400F1F11A /* SelectionNavigationModifier.swift */; };
 		FF9B37CE232A441500F1F11A /* SelectionNavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B37CC232A441400F1F11A /* SelectionNavigationModifier.swift */; };
 		FFCD96A023288EC100C67E28 /* UIKitStyleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD969E23288EC000C67E28 /* UIKitStyleAnimation.swift */; };
 		FFCD96A123288EC100C67E28 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD969F23288EC100C67E28 /* BlurView.swift */; };
@@ -613,7 +611,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF9B37CD232A441500F1F11A /* SelectionNavigationModifier.swift in Sources */,
 				FF28244A23263A1900383093 /* GeometryProxy.swift in Sources */,
 				FFCD96A123288EC100C67E28 /* BlurView.swift in Sources */,
 				FFD8F00522F328630089D8ED /* AnyViewBuilder.swift in Sources */,
@@ -626,7 +623,6 @@
 				FF26448F22E739900043EAB3 /* ContentView.swift in Sources */,
 				FFCD96A023288EC100C67E28 /* UIKitStyleAnimation.swift in Sources */,
 				FF2644AC22E73A230043EAB3 /* Character.swift in Sources */,
-				FF2824452326372700383093 /* View.swift in Sources */,
 				FFD8F00222F328630089D8ED /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
