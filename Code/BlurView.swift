@@ -9,222 +9,83 @@
 import SwiftUI
 #if os(iOS)
 struct BlurView: UIViewRepresentable {
-    let style: Style
+	/*0 to 1*/
+    let level: CGFloat
+	enum Sort {
+		case light
+		case dark
+	}
+	let sort: Sort
+	init(level: CGFloat, prefer sort: Sort = .light) {
+		self.level = level
+		self.sort = sort
+	}
 
-    func makeUIView(context: UIViewRepresentableContext<BlurView>) -> UIView {
-		let blurEffect = UIBlurEffect(style: style._style)
+    func makeUIView(context: UIViewRepresentableContext<BlurView>) -> UIVisualEffectView {
+		let blurEffect = UIBlurEffect(style: style)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.translatesAutoresizingMaskIntoConstraints = false
 
         return blurView
     }
 
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<BlurView>) {
-
+    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<BlurView>) {
+		uiView.effect = UIBlurEffect(style: style)
     }
 }
-extension BlurView.Style {
-	fileprivate var _style: UIBlurEffect.Style {
-		switch self {
-		case .regular:
-			return .regular
-		case .prominent:
-			return .prominent
-		case .regularDark:
-			return .dark
-		case .ultraThin:
-			return .systemUltraThinMaterial
-		case .thin:
-			return .systemThinMaterial
-		case .material:
-			return .systemMaterial
-		case .thick:
-			return .systemThickMaterial
-		case .chrome:
-			return .systemChromeMaterial
-		case .regularLight:
-			return .light
-		case .prominentLight:
-			return .extraLight
-		case .ultraThinLight:
-			return .systemUltraThinMaterialLight
-		case .thinLight:
-			return .systemThinMaterialLight
-		case .materialLight:
-			return .systemMaterialLight
-		case .thicklLight:
-			return .systemThickMaterialLight
-		case .chromeLight:
-			return .systemChromeMaterialLight
-		case .ultraThinDark:
-			return .systemUltraThinMaterialDark
-		case .ThinDark:
-			return .systemThinMaterialDark
-		case .materialDark:
-			return .systemMaterialDark
-		case .thicklDark:
-			return .systemThickMaterialDark
-		case .chromeDark:
-			return .systemChromeMaterialDark
+extension BlurView {
+	fileprivate var style: UIBlurEffect.Style {
+		var styles: [UIBlurEffect.Style]
+		switch sort {
+		case .light:
+			styles = [.regular, .systemUltraThinMaterial, .systemThinMaterial, .systemMaterial, .prominent, .systemChromeMaterial, .systemThickMaterial]
+		case .dark:
+			styles = [.systemUltraThinMaterial, .systemThinMaterial, .systemMaterial, .systemThickMaterial, .systemChromeMaterial, .regular, .prominent]
 		}
+		
+		let index = Int(round(CGFloat(styles.count)) * level)
+		return styles[max(0, min(styles.count - 1, index))]
 	}
 }
 #elseif os(macOS)
 @available(OSX 10.15, *)
 struct BlurView: NSViewRepresentable {
-    let style: Style
+	/*0 to 1*/
+    let level: CGFloat
+	enum Sort {
+		case light
+		case dark
+	}
+	let sort: Sort
+	init(level: CGFloat, prefer sort: Sort = .light) {
+		self.level = level
+		self.sort = sort
+	}
 
-	func makeUIView(context: NSViewRepresentableContext<BlurView>) -> NSView {
-		NSVisualEffectView
-		let blurEffect = UIBlurEffect(style: style._style)
-        let blurView = NSVisualEffectView(effect: blurEffect)
+	func makeNSView(context: NSViewRepresentableContext<BlurView>) -> NSVisualEffectView {
+		
+        let blurView = NSVisualEffectView()
         blurView.translatesAutoresizingMaskIntoConstraints = false
-
-        return view
+		blurView.material = style
+		blurView.blendingMode = .withinWindow
+        return blurView
     }
 
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<BlurView>) {
-
-    }
+	func updateNSView(_ nsView: NSVisualEffectView, context: NSViewRepresentableContext<BlurView>) {
+		nsView.material = style
+	}
 }
-extension BlurView.Style {
-	fileprivate var _style: UIBlurEffect.Style {
-		switch self {
-		case .regular:
-			return .regular
-		case .prominent:
-			return .prominent
-		case .regularDark:
-			return .dark
-		case .ultraThin:
-			return .systemUltraThinMaterial
-		case .thin:
-			return .systemThinMaterial
-		case .material:
-			return .systemMaterial
-		case .thick:
-			return .systemThickMaterial
-		case .chrome:
-			return .systemChromeMaterial
-		case .regularLight:
-			return .light
-		case .prominentLight:
-			return .extraLight
-		case .ultraThinLight:
-			return .systemUltraThinMaterialLight
-		case .thinLight:
-			return .systemThinMaterialLight
-		case .materialLight:
-			return .systemMaterialLight
-		case .thicklLight:
-			return .systemThickMaterialLight
-		case .chromeLight:
-			return .systemChromeMaterialLight
-		case .ultraThinDark:
-			return .systemUltraThinMaterialDark
-		case .ThinDark:
-			return .systemThinMaterialDark
-		case .materialDark:
-			return .systemMaterialDark
-		case .thicklDark:
-			return .systemThickMaterialDark
-		case .chromeDark:
-			return .systemChromeMaterialDark
+extension BlurView {
+	fileprivate var style: NSVisualEffectView.Material {
+		var styles: [NSVisualEffectView.Material]
+		switch sort {
+		case .light:
+			styles = [.popover, .toolTip, .menu, .sheet, .headerView, .sidebar, .underWindowBackground, .windowBackground, .contentBackground]
+		case .dark:
+			styles = [.popover, .toolTip, .menu, .sheet, .headerView, .sidebar, .underWindowBackground, .windowBackground, .contentBackground]
 		}
+		let index = Int(round(CGFloat(styles.count)) * level)
+		return styles[max(0, min(styles.count - 1, index))]
 	}
 }
 #endif
-
-extension BlurView {
-	public enum Style : Int {
-		case regular
-		
-		case prominent
-		
-        case ultraThin
-
-        case thin
-
-        case material
-
-        case thick
-
-        case chrome
-		
-		public var light: Style {
-			switch self {
-			case .regular, .regularLight, .regularDark:
-				return .regularLight
-				
-			case .ultraThin, .ultraThinLight, .ultraThinDark:
-				return .ultraThinLight
-				
-			case .thin, .thinLight, .ThinDark:
-				return .thinLight
-				
-			case .material, .materialLight, .materialDark:
-				return .materialLight
-				
-			case .thick, .thicklLight, .thicklDark:
-				return .thicklLight
-				
-			case .chrome, .chromeLight, .chromeDark:
-				return .chromeLight
-			case .prominent, .prominentLight:
-				return .prominentLight
-			}
-		}
-		public var dark: Style {
-			switch self {
-			case .regular, .regularLight, .regularDark:
-				return .regularDark
-
-			case .prominent, .prominentLight:
-				return .regularDark
-				
-			case .ultraThin, .ultraThinLight, .ultraThinDark:
-				return .ultraThinDark
-				
-			case .thin, .thinLight, .ThinDark:
-				return .ThinDark
-				
-			case .material, .materialLight, .materialDark:
-				return .materialDark
-				
-			case .thick, .thicklLight, .thicklDark:
-				return .thicklDark
-				
-			case .chrome, .chromeLight, .chromeDark:
-				return .chromeDark
-			}
-		}
-		
-		case regularLight
-		
-		case prominentLight
-		
-        case ultraThinLight
-
-        case thinLight
-
-        case materialLight
-
-        case thicklLight
-
-        case chromeLight
-
-        
-		case regularDark
-		
-        case ultraThinDark
-
-        case ThinDark
-
-        case materialDark
-
-        case thicklDark
-
-        case chromeDark
-    }
-}
-
