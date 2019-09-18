@@ -11,7 +11,13 @@ import SwiftUI
 extension GeometryProxy {
 	var centerOffset: CGSize {
 		let frame = self.frame(in: .global)
+
+		#if os(iOS)
 		let winSize = UIScreen.main.bounds.size
+		#elseif os(macOS)
+		//FIXME:    mac的Screen是指屏幕还是指app当前尺寸?
+		let winSize = NSScreen.main?.frame.size ?? .zero
+		#endif
 		
 		let width = (winSize.width - frame.width) / 2 - frame.origin.x
 		let height = (winSize.height - frame.height) / 2 - frame.origin.y

@@ -6,7 +6,9 @@
 //  Copyright © 2019 庄黛淳华. All rights reserved.
 //
 
+#if os(iOS)
 import UIKit
+
 import SwiftUI
 /*RandomAccessCollection :
 IdentifierValuePairs
@@ -372,3 +374,5 @@ extension Grid {
 		}
 	}
 }
+
+#endif

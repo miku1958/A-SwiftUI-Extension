@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+#if os(iOS)
+
 protocol ViewExpand {
 	func wrap<Content>(_ source: Any) -> Content where Content: View
 	func expand() -> [AnyView]
@@ -65,3 +67,4 @@ extension TupleView: ViewExpand {
 		return expand().count
 	}
 }
+#endif

@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+
+#if os(iOS)
 import UIKit
 public struct UIKitStyleAnimation<Base, Result>: ViewModifier where Base: View, Result: View {
 	public typealias BodyType = (_ view: Base, _ isInitial: Bool) -> Result
@@ -22,3 +24,4 @@ public struct UIKitStyleAnimation<Base, Result>: ViewModifier where Base: View, 
 			.animation(animation)
 	}
 }
+#endif

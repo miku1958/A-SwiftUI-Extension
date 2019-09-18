@@ -10,6 +10,16 @@ import Foundation
 import SwiftUI
 
 extension View {
+	var screenSize: CGSize {
+		#if os(iOS)
+		return UIScreen.main.bounds.size
+		#elseif os(macOS)
+		return NSScreen.main?.frame.size ?? .zero
+		#endif
+	}
+}
+
+extension View {
 	/// add a border like beta1
 	public func addBorder<S>(_ content: S, width: CGFloat = 1, cornerRadius: CGFloat) -> some View where S : ShapeStyle {
 		overlay(RoundedRectangle(cornerRadius: cornerRadius).strokeBorder(content, lineWidth: width))
@@ -72,14 +82,14 @@ extension View {
 						content()
 							.background(
 							backgroundColor
-								.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+								.frame(width: self.screenSize.width, height: self.screenSize.height))
 							.offset(proxy.centerOffset)
 					}.onTapGesture {
 						
 					}
 					.onLongPressGesture {
 						
-					}.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+					}.frame(width: screenSize.width, height: screenSize.height)
 				}
 			}
 			
@@ -88,11 +98,13 @@ extension View {
 }
 
 // Animation
+#if os(iOS)
 extension View {
 	public func doAnimation<Result>(_ animation: Animation? = .default, _ body: @escaping UIKitStyleAnimation<Self, Result>.BodyType) -> some View where Result: View {
 		modifier(UIKitStyleAnimation(animation: animation, base: self, runAnimation: body))
 	}
 }
+#endif
 
 extension View {
 	/// put the view to HStack/VStack 's center
@@ -156,6 +168,7 @@ https://github.com/SwiftUIX/SwiftUIX/blob/master/Sources/Intramodular/Navigation
 
 */
 
+#if os(iOS)
 extension View {
     @available(OSX, unavailable)
     @available(watchOS, unavailable)
@@ -178,3 +191,4 @@ extension View {
 		)
 	}
 }
+#endif

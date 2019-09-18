@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+#if os(iOS)
 protocol GridSectionProtocol {
 	var header: AnyView? { get }
 	var contents: [AnyView] { get }
@@ -105,3 +106,5 @@ extension GridSection where Parent == EmptyView, Footer == EmptyView {
 		self._footer = EmptyView()
 	}
 }
+
+#endif

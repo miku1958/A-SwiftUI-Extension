@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+#if os(iOS)
 protocol AnyViewStorageProtocol {
 	var anyView: SwiftUI.AnyView { get }
 	var value: Any { get }
@@ -42,3 +43,4 @@ public struct AnyView {
 		return stroage.anyView
 	}()
 }
+#endif
