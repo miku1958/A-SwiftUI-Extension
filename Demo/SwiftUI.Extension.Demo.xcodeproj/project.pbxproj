@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF1D42AA2327927400D87B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1D42A92327927400D87B74 /* AppDelegate.swift */; };
+		FF1D42AC2327927400D87B74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1D42AB2327927400D87B74 /* SceneDelegate.swift */; };
+		FF1D42AE2327927400D87B74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1D42AD2327927400D87B74 /* ContentView.swift */; };
+		FF1D42B02327927500D87B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1D42AF2327927500D87B74 /* Assets.xcassets */; };
+		FF1D42B32327927500D87B74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1D42B22327927500D87B74 /* Preview Assets.xcassets */; };
+		FF1D42B62327927500D87B74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1D42B42327927500D87B74 /* LaunchScreen.storyboard */; };
+		FF1D42C3232793E000D87B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1D42C2232793E000D87B74 /* AppDelegate.swift */; };
+		FF1D42C5232793E000D87B74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1D42C4232793E000D87B74 /* ContentView.swift */; };
+		FF1D42C7232793E000D87B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1D42C6232793E000D87B74 /* Assets.xcassets */; };
+		FF1D42CA232793E000D87B74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1D42C9232793E000D87B74 /* Preview Assets.xcassets */; };
+		FF1D42CD232793E000D87B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1D42CB232793E000D87B74 /* Main.storyboard */; };
 		FF26448B22E739900043EAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF26448A22E739900043EAB3 /* AppDelegate.swift */; };
 		FF26448D22E739900043EAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF26448C22E739900043EAB3 /* SceneDelegate.swift */; };
 		FF26448F22E739900043EAB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF26448E22E739900043EAB3 /* ContentView.swift */; };
@@ -14,6 +25,41 @@
 		FF26449422E739900043EAB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF26449322E739900043EAB3 /* Preview Assets.xcassets */; };
 		FF26449722E739900043EAB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF26449522E739900043EAB3 /* LaunchScreen.storyboard */; };
 		FF2644AC22E73A230043EAB3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2644AB22E73A230043EAB3 /* Character.swift */; };
+		FF2824452326372700383093 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2824442326372700383093 /* View.swift */; };
+		FF2824462326377A00383093 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2824442326372700383093 /* View.swift */; };
+		FF28244A23263A1900383093 /* GeometryProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28244923263A1900383093 /* GeometryProxy.swift */; };
+		FF28244B23263A1900383093 /* GeometryProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28244923263A1900383093 /* GeometryProxy.swift */; };
+		FF721A3922FEA5760097083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A3822FEA5760097083B /* AppDelegate.swift */; };
+		FF721A3B22FEA5760097083B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A3A22FEA5760097083B /* SceneDelegate.swift */; };
+		FF721A3D22FEA5760097083B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A3C22FEA5760097083B /* ContentView.swift */; };
+		FF721A3F22FEA5770097083B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF721A3E22FEA5770097083B /* Assets.xcassets */; };
+		FF721A4222FEA5770097083B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF721A4122FEA5770097083B /* Preview Assets.xcassets */; };
+		FF721A4522FEA5770097083B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF721A4322FEA5770097083B /* LaunchScreen.storyboard */; };
+		FF721A5022FEA5780097083B /* PreviewDeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A4F22FEA5780097083B /* PreviewDeviceTests.swift */; };
+		FF721A5B22FEA5780097083B /* PreviewDeviceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A5A22FEA5780097083B /* PreviewDeviceUITests.swift */; };
+		FF721A6722FEA58D0097083B /* PreviewDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A6622FEA58D0097083B /* PreviewDevice.swift */; };
+		FF721A6822FEA58D0097083B /* PreviewDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A6622FEA58D0097083B /* PreviewDevice.swift */; };
+		FF9A534E2330C140003C2B61 /* PreviewDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A6622FEA58D0097083B /* PreviewDevice.swift */; };
+		FF9A53502330C704003C2B61 /* GeometryProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28244923263A1900383093 /* GeometryProxy.swift */; };
+		FF9A53512330C704003C2B61 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8EFFC22F328630089D8ED /* Grid.swift */; };
+		FF9A53522330C704003C2B61 /* SelectionNavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B37CC232A441400F1F11A /* SelectionNavigationModifier.swift */; };
+		FF9A53532330C704003C2B61 /* GridSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8EFFB22F328630089D8ED /* GridSection.swift */; };
+		FF9A53542330C704003C2B61 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B37C12329DE9D00F1F11A /* LazyView.swift */; };
+		FF9A53552330C704003C2B61 /* PreviewDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A6622FEA58D0097083B /* PreviewDevice.swift */; };
+		FF9A53562330C706003C2B61 /* UIKitStyleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD969E23288EC000C67E28 /* UIKitStyleAnimation.swift */; };
+		FF9A53572330C709003C2B61 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2824442326372700383093 /* View.swift */; };
+		FF9A53582330C70D003C2B61 /* ViewExpand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8EFFE22F328630089D8ED /* ViewExpand.swift */; };
+		FF9A53592330C70D003C2B61 /* AnyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8EFFF22F328630089D8ED /* AnyView.swift */; };
+		FF9A535A2330C70D003C2B61 /* AnyViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8F00022F328630089D8ED /* AnyViewBuilder.swift */; };
+		FF9B37C22329DE9D00F1F11A /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B37C12329DE9D00F1F11A /* LazyView.swift */; };
+		FF9B37CD232A441500F1F11A /* SelectionNavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B37CC232A441400F1F11A /* SelectionNavigationModifier.swift */; };
+		FF9B37CE232A441500F1F11A /* SelectionNavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B37CC232A441400F1F11A /* SelectionNavigationModifier.swift */; };
+		FFCD96A023288EC100C67E28 /* UIKitStyleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD969E23288EC000C67E28 /* UIKitStyleAnimation.swift */; };
+		FFCD96A123288EC100C67E28 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD969F23288EC100C67E28 /* BlurView.swift */; };
+		FFCD96A223288ECA00C67E28 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD969F23288EC100C67E28 /* BlurView.swift */; };
+		FFCD96A323288ECB00C67E28 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD969F23288EC100C67E28 /* BlurView.swift */; };
+		FFCD96A423288ECD00C67E28 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD969F23288EC100C67E28 /* BlurView.swift */; };
+		FFCD96A523288ED200C67E28 /* UIKitStyleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD969E23288EC000C67E28 /* UIKitStyleAnimation.swift */; };
 		FFD8F00122F328630089D8ED /* GridSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8EFFB22F328630089D8ED /* GridSection.swift */; };
 		FFD8F00222F328630089D8ED /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8EFFC22F328630089D8ED /* Grid.swift */; };
 		FFD8F00322F328630089D8ED /* ViewExpand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8EFFE22F328630089D8ED /* ViewExpand.swift */; };
@@ -21,7 +67,40 @@
 		FFD8F00522F328630089D8ED /* AnyViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8F00022F328630089D8ED /* AnyViewBuilder.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FF721A4C22FEA5780097083B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF26446522E739790043EAB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF721A3522FEA5760097083B;
+			remoteInfo = PreviewDevice;
+		};
+		FF721A5722FEA5780097083B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF26446522E739790043EAB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF721A3522FEA5760097083B;
+			remoteInfo = PreviewDevice;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		FF1D42A72327927400D87B74 /* BlurView.Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlurView.Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF1D42A92327927400D87B74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF1D42AB2327927400D87B74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FF1D42AD2327927400D87B74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF1D42AF2327927500D87B74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF1D42B22327927500D87B74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF1D42B52327927500D87B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF1D42B72327927500D87B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF1D42C0232793E000D87B74 /* BlurView.mac.Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlurView.mac.Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF1D42C2232793E000D87B74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF1D42C4232793E000D87B74 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF1D42C6232793E000D87B74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF1D42C9232793E000D87B74 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF1D42CC232793E000D87B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FF1D42CE232793E000D87B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF1D42CF232793E000D87B74 /* BlurView_mac_Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlurView_mac_Demo.entitlements; sourceTree = "<group>"; };
 		FF26448822E739900043EAB3 /* Grid.Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grid.Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF26448A22E739900043EAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF26448C22E739900043EAB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +110,27 @@
 		FF26449622E739900043EAB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF26449822E739900043EAB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF2644AB22E73A230043EAB3 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		FF2824442326372700383093 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = View.swift; path = ../Code/View.swift; sourceTree = "<group>"; };
+		FF28244923263A1900383093 /* GeometryProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeometryProxy.swift; path = ../Code/GeometryProxy.swift; sourceTree = "<group>"; };
+		FF721A3622FEA5760097083B /* PreviewDevice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PreviewDevice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF721A3822FEA5760097083B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FF721A3A22FEA5760097083B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FF721A3C22FEA5760097083B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF721A3E22FEA5770097083B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF721A4122FEA5770097083B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF721A4422FEA5770097083B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF721A4622FEA5770097083B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF721A4B22FEA5780097083B /* PreviewDeviceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PreviewDeviceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF721A4F22FEA5780097083B /* PreviewDeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDeviceTests.swift; sourceTree = "<group>"; };
+		FF721A5122FEA5780097083B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF721A5622FEA5780097083B /* PreviewDeviceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PreviewDeviceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF721A5A22FEA5780097083B /* PreviewDeviceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDeviceUITests.swift; sourceTree = "<group>"; };
+		FF721A5C22FEA5780097083B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF721A6622FEA58D0097083B /* PreviewDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewDevice.swift; path = ../Code/PreviewDevice.swift; sourceTree = "<group>"; };
+		FF9B37C12329DE9D00F1F11A /* LazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LazyView.swift; path = ../Code/LazyView.swift; sourceTree = "<group>"; };
+		FF9B37CC232A441400F1F11A /* SelectionNavigationModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectionNavigationModifier.swift; path = ../Code/SelectionNavigationModifier.swift; sourceTree = "<group>"; };
+		FFCD969E23288EC000C67E28 /* UIKitStyleAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIKitStyleAnimation.swift; path = ../Code/UIKitStyleAnimation.swift; sourceTree = "<group>"; };
+		FFCD969F23288EC100C67E28 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = ../Code/BlurView.swift; sourceTree = "<group>"; };
 		FFD8EFFB22F328630089D8ED /* GridSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridSection.swift; path = ../Code/GridSection.swift; sourceTree = "<group>"; };
 		FFD8EFFC22F328630089D8ED /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Grid.swift; path = ../Code/Grid.swift; sourceTree = "<group>"; };
 		FFD8EFFE22F328630089D8ED /* ViewExpand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExpand.swift; sourceTree = "<group>"; };
@@ -39,7 +139,42 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FF1D42A42327927400D87B74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF1D42BD232793E000D87B74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF26448522E739900043EAB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF721A3322FEA5760097083B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF721A4822FEA5780097083B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF721A5322FEA5780097083B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,11 +184,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF1D42A82327927400D87B74 /* BlurView.Demo */ = {
+			isa = PBXGroup;
+			children = (
+				FF1D42A92327927400D87B74 /* AppDelegate.swift */,
+				FF1D42AB2327927400D87B74 /* SceneDelegate.swift */,
+				FF1D42AD2327927400D87B74 /* ContentView.swift */,
+				FF1D42AF2327927500D87B74 /* Assets.xcassets */,
+				FF1D42B42327927500D87B74 /* LaunchScreen.storyboard */,
+				FF1D42B72327927500D87B74 /* Info.plist */,
+				FF1D42B12327927500D87B74 /* Preview Content */,
+			);
+			path = BlurView.Demo;
+			sourceTree = "<group>";
+		};
+		FF1D42B12327927500D87B74 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FF1D42B22327927500D87B74 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF1D42C1232793E000D87B74 /* BlurView.mac.Demo */ = {
+			isa = PBXGroup;
+			children = (
+				FF1D42C2232793E000D87B74 /* AppDelegate.swift */,
+				FF1D42C4232793E000D87B74 /* ContentView.swift */,
+				FF1D42C6232793E000D87B74 /* Assets.xcassets */,
+				FF1D42CB232793E000D87B74 /* Main.storyboard */,
+				FF1D42CE232793E000D87B74 /* Info.plist */,
+				FF1D42CF232793E000D87B74 /* BlurView_mac_Demo.entitlements */,
+				FF1D42C8232793E000D87B74 /* Preview Content */,
+			);
+			path = BlurView.mac.Demo;
+			sourceTree = "<group>";
+		};
+		FF1D42C8232793E000D87B74 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FF1D42C9232793E000D87B74 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		FF26446422E739790043EAB3 = {
 			isa = PBXGroup;
 			children = (
 				FF2644B522E73AB00043EAB3 /* Extension */,
 				FF26448922E739900043EAB3 /* Grid.Demo */,
+				FF1D42A82327927400D87B74 /* BlurView.Demo */,
+				FF721A3722FEA5760097083B /* PreviewDevice */,
+				FF721A4E22FEA5780097083B /* PreviewDeviceTests */,
+				FF721A5922FEA5780097083B /* PreviewDeviceUITests */,
+				FF1D42C1232793E000D87B74 /* BlurView.mac.Demo */,
 				FF26446E22E739790043EAB3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +246,11 @@
 			isa = PBXGroup;
 			children = (
 				FF26448822E739900043EAB3 /* Grid.Demo.app */,
+				FF721A3622FEA5760097083B /* PreviewDevice.app */,
+				FF721A4B22FEA5780097083B /* PreviewDeviceTests.xctest */,
+				FF721A5622FEA5780097083B /* PreviewDeviceUITests.xctest */,
+				FF1D42A72327927400D87B74 /* BlurView.Demo.app */,
+				FF1D42C0232793E000D87B74 /* BlurView.mac.Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,11 +281,58 @@
 		FF2644B522E73AB00043EAB3 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FFCD969F23288EC100C67E28 /* BlurView.swift */,
+				FF28244923263A1900383093 /* GeometryProxy.swift */,
 				FFD8EFFC22F328630089D8ED /* Grid.swift */,
+				FF9B37CC232A441400F1F11A /* SelectionNavigationModifier.swift */,
 				FFD8EFFB22F328630089D8ED /* GridSection.swift */,
+				FF9B37C12329DE9D00F1F11A /* LazyView.swift */,
+				FF721A6622FEA58D0097083B /* PreviewDevice.swift */,
 				FFD8EFFD22F328630089D8ED /* Replace.Do Not Use This File.It may change name if necessary */,
+				FFCD969E23288EC000C67E28 /* UIKitStyleAnimation.swift */,
+				FF2824442326372700383093 /* View.swift */,
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		FF721A3722FEA5760097083B /* PreviewDevice */ = {
+			isa = PBXGroup;
+			children = (
+				FF721A3822FEA5760097083B /* AppDelegate.swift */,
+				FF721A3A22FEA5760097083B /* SceneDelegate.swift */,
+				FF721A3C22FEA5760097083B /* ContentView.swift */,
+				FF721A3E22FEA5770097083B /* Assets.xcassets */,
+				FF721A4322FEA5770097083B /* LaunchScreen.storyboard */,
+				FF721A4622FEA5770097083B /* Info.plist */,
+				FF721A4022FEA5770097083B /* Preview Content */,
+			);
+			path = PreviewDevice;
+			sourceTree = "<group>";
+		};
+		FF721A4022FEA5770097083B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FF721A4122FEA5770097083B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF721A4E22FEA5780097083B /* PreviewDeviceTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF721A4F22FEA5780097083B /* PreviewDeviceTests.swift */,
+				FF721A5122FEA5780097083B /* Info.plist */,
+			);
+			path = PreviewDeviceTests;
+			sourceTree = "<group>";
+		};
+		FF721A5922FEA5780097083B /* PreviewDeviceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF721A5A22FEA5780097083B /* PreviewDeviceUITests.swift */,
+				FF721A5C22FEA5780097083B /* Info.plist */,
+			);
+			path = PreviewDeviceUITests;
 			sourceTree = "<group>";
 		};
 		FFD8EFFD22F328630089D8ED /* Replace.Do Not Use This File.It may change name if necessary */ = {
@@ -113,6 +349,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FF1D42A62327927400D87B74 /* BlurView.Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF1D42BA2327927500D87B74 /* Build configuration list for PBXNativeTarget "BlurView.Demo" */;
+			buildPhases = (
+				FF1D42A32327927400D87B74 /* Sources */,
+				FF1D42A42327927400D87B74 /* Frameworks */,
+				FF1D42A52327927400D87B74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlurView.Demo;
+			productName = BlurView.Demo;
+			productReference = FF1D42A72327927400D87B74 /* BlurView.Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF1D42BF232793E000D87B74 /* BlurView.mac.Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF1D42D0232793E000D87B74 /* Build configuration list for PBXNativeTarget "BlurView.mac.Demo" */;
+			buildPhases = (
+				FF1D42BC232793E000D87B74 /* Sources */,
+				FF1D42BD232793E000D87B74 /* Frameworks */,
+				FF1D42BE232793E000D87B74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlurView.mac.Demo;
+			productName = BlurView.mac.Demo;
+			productReference = FF1D42C0232793E000D87B74 /* BlurView.mac.Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FF26448722E739900043EAB3 /* Grid.Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF26449922E739900043EAB3 /* Build configuration list for PBXNativeTarget "Grid.Demo" */;
@@ -130,6 +400,59 @@
 			productReference = FF26448822E739900043EAB3 /* Grid.Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FF721A3522FEA5760097083B /* PreviewDevice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF721A6322FEA5780097083B /* Build configuration list for PBXNativeTarget "PreviewDevice" */;
+			buildPhases = (
+				FF721A3222FEA5760097083B /* Sources */,
+				FF721A3322FEA5760097083B /* Frameworks */,
+				FF721A3422FEA5760097083B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PreviewDevice;
+			productName = PreviewDevice;
+			productReference = FF721A3622FEA5760097083B /* PreviewDevice.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF721A4A22FEA5780097083B /* PreviewDeviceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF721A6422FEA5780097083B /* Build configuration list for PBXNativeTarget "PreviewDeviceTests" */;
+			buildPhases = (
+				FF721A4722FEA5780097083B /* Sources */,
+				FF721A4822FEA5780097083B /* Frameworks */,
+				FF721A4922FEA5780097083B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF721A4D22FEA5780097083B /* PBXTargetDependency */,
+			);
+			name = PreviewDeviceTests;
+			productName = PreviewDeviceTests;
+			productReference = FF721A4B22FEA5780097083B /* PreviewDeviceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF721A5522FEA5780097083B /* PreviewDeviceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF721A6522FEA5780097083B /* Build configuration list for PBXNativeTarget "PreviewDeviceUITests" */;
+			buildPhases = (
+				FF721A5222FEA5780097083B /* Sources */,
+				FF721A5322FEA5780097083B /* Frameworks */,
+				FF721A5422FEA5780097083B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF721A5822FEA5780097083B /* PBXTargetDependency */,
+			);
+			name = PreviewDeviceUITests;
+			productName = PreviewDeviceUITests;
+			productReference = FF721A5622FEA5780097083B /* PreviewDeviceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -140,8 +463,25 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "庄黛淳华";
 				TargetAttributes = {
+					FF1D42A62327927400D87B74 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					FF1D42BF232793E000D87B74 = {
+						CreatedOnToolsVersion = 11.0;
+					};
 					FF26448722E739900043EAB3 = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					FF721A3522FEA5760097083B = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					FF721A4A22FEA5780097083B = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = FF721A3522FEA5760097083B;
+					};
+					FF721A5522FEA5780097083B = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = FF721A3522FEA5760097083B;
 					};
 				};
 			};
@@ -159,11 +499,36 @@
 			projectRoot = "";
 			targets = (
 				FF26448722E739900043EAB3 /* Grid.Demo */,
+				FF721A3522FEA5760097083B /* PreviewDevice */,
+				FF721A4A22FEA5780097083B /* PreviewDeviceTests */,
+				FF721A5522FEA5780097083B /* PreviewDeviceUITests */,
+				FF1D42A62327927400D87B74 /* BlurView.Demo */,
+				FF1D42BF232793E000D87B74 /* BlurView.mac.Demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FF1D42A52327927400D87B74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF1D42B62327927500D87B74 /* LaunchScreen.storyboard in Resources */,
+				FF1D42B32327927500D87B74 /* Preview Assets.xcassets in Resources */,
+				FF1D42B02327927500D87B74 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF1D42BE232793E000D87B74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF1D42CD232793E000D87B74 /* Main.storyboard in Resources */,
+				FF1D42CA232793E000D87B74 /* Preview Assets.xcassets in Resources */,
+				FF1D42C7232793E000D87B74 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF26448622E739900043EAB3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,28 +539,153 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF721A3422FEA5760097083B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF721A4522FEA5770097083B /* LaunchScreen.storyboard in Resources */,
+				FF721A4222FEA5770097083B /* Preview Assets.xcassets in Resources */,
+				FF721A3F22FEA5770097083B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF721A4922FEA5780097083B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF721A5422FEA5780097083B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FF1D42A32327927400D87B74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF1D42AA2327927400D87B74 /* AppDelegate.swift in Sources */,
+				FFCD96A223288ECA00C67E28 /* BlurView.swift in Sources */,
+				FF1D42AC2327927400D87B74 /* SceneDelegate.swift in Sources */,
+				FF1D42AE2327927400D87B74 /* ContentView.swift in Sources */,
+				FF9A534E2330C140003C2B61 /* PreviewDevice.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF1D42BC232793E000D87B74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF9A53502330C704003C2B61 /* GeometryProxy.swift in Sources */,
+				FF1D42C5232793E000D87B74 /* ContentView.swift in Sources */,
+				FF1D42C3232793E000D87B74 /* AppDelegate.swift in Sources */,
+				FF9A53562330C706003C2B61 /* UIKitStyleAnimation.swift in Sources */,
+				FF9A53552330C704003C2B61 /* PreviewDevice.swift in Sources */,
+				FF9A53512330C704003C2B61 /* Grid.swift in Sources */,
+				FF9A53542330C704003C2B61 /* LazyView.swift in Sources */,
+				FF9A53532330C704003C2B61 /* GridSection.swift in Sources */,
+				FF9A53592330C70D003C2B61 /* AnyView.swift in Sources */,
+				FF9A535A2330C70D003C2B61 /* AnyViewBuilder.swift in Sources */,
+				FFCD96A323288ECB00C67E28 /* BlurView.swift in Sources */,
+				FF9A53572330C709003C2B61 /* View.swift in Sources */,
+				FF9A53582330C70D003C2B61 /* ViewExpand.swift in Sources */,
+				FF9A53522330C704003C2B61 /* SelectionNavigationModifier.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FF26448422E739900043EAB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF9B37CD232A441500F1F11A /* SelectionNavigationModifier.swift in Sources */,
+				FF28244A23263A1900383093 /* GeometryProxy.swift in Sources */,
+				FFCD96A123288EC100C67E28 /* BlurView.swift in Sources */,
 				FFD8F00522F328630089D8ED /* AnyViewBuilder.swift in Sources */,
 				FFD8F00122F328630089D8ED /* GridSection.swift in Sources */,
 				FF26448B22E739900043EAB3 /* AppDelegate.swift in Sources */,
 				FFD8F00322F328630089D8ED /* ViewExpand.swift in Sources */,
+				FF721A6722FEA58D0097083B /* PreviewDevice.swift in Sources */,
 				FFD8F00422F328630089D8ED /* AnyView.swift in Sources */,
 				FF26448D22E739900043EAB3 /* SceneDelegate.swift in Sources */,
 				FF26448F22E739900043EAB3 /* ContentView.swift in Sources */,
+				FFCD96A023288EC100C67E28 /* UIKitStyleAnimation.swift in Sources */,
 				FF2644AC22E73A230043EAB3 /* Character.swift in Sources */,
+				FF2824452326372700383093 /* View.swift in Sources */,
 				FFD8F00222F328630089D8ED /* Grid.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF721A3222FEA5760097083B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF9B37CE232A441500F1F11A /* SelectionNavigationModifier.swift in Sources */,
+				FF9B37C22329DE9D00F1F11A /* LazyView.swift in Sources */,
+				FF28244B23263A1900383093 /* GeometryProxy.swift in Sources */,
+				FFCD96A423288ECD00C67E28 /* BlurView.swift in Sources */,
+				FF721A6822FEA58D0097083B /* PreviewDevice.swift in Sources */,
+				FFCD96A523288ED200C67E28 /* UIKitStyleAnimation.swift in Sources */,
+				FF721A3922FEA5760097083B /* AppDelegate.swift in Sources */,
+				FF2824462326377A00383093 /* View.swift in Sources */,
+				FF721A3B22FEA5760097083B /* SceneDelegate.swift in Sources */,
+				FF721A3D22FEA5760097083B /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF721A4722FEA5780097083B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF721A5022FEA5780097083B /* PreviewDeviceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF721A5222FEA5780097083B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF721A5B22FEA5780097083B /* PreviewDeviceUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FF721A4D22FEA5780097083B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF721A3522FEA5760097083B /* PreviewDevice */;
+			targetProxy = FF721A4C22FEA5780097083B /* PBXContainerItemProxy */;
+		};
+		FF721A5822FEA5780097083B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF721A3522FEA5760097083B /* PreviewDevice */;
+			targetProxy = FF721A5722FEA5780097083B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		FF1D42B42327927500D87B74 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF1D42B52327927500D87B74 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FF1D42CB232793E000D87B74 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF1D42CC232793E000D87B74 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		FF26449522E739900043EAB3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -204,9 +694,107 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		FF721A4322FEA5770097083B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FF721A4422FEA5770097083B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FF1D42B82327927500D87B74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"BlurView.Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = 3AP6XM8L72;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BlurView.Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mikun.BlurView-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF1D42B92327927500D87B74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"BlurView.Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = 3AP6XM8L72;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BlurView.Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mikun.BlurView-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF1D42D1232793E000D87B74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlurView.mac.Demo/BlurView_mac_Demo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"BlurView.mac.Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = 3AP6XM8L72;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BlurView.mac.Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "mikun.BlurView-mac-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FF1D42D2232793E000D87B74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlurView.mac.Demo/BlurView_mac_Demo.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"BlurView.mac.Demo/Preview Content\"";
+				DEVELOPMENT_TEAM = 3AP6XM8L72;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BlurView.mac.Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "mikun.BlurView-mac-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		FF26447F22E7397A0043EAB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -325,6 +913,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Grid.Demo/Grid.Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "Grid.Demo/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
@@ -335,6 +924,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mikun.Grid-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -344,6 +934,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Grid.Demo/Grid.Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "Grid.Demo/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
@@ -354,14 +945,153 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "mikun.Grid-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF721A5D22FEA5780097083B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "PreviewDevice/Preview\\ Content";
+				DEVELOPMENT_TEAM = 3AP6XM8L72;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = PreviewDevice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mikun.InsettableShape-inset-crash";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF721A5E22FEA5780097083B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "PreviewDevice/Preview\\ Content";
+				DEVELOPMENT_TEAM = 3AP6XM8L72;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = PreviewDevice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "mikun.InsettableShape-inset-crash";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF721A5F22FEA5780097083B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PreviewDeviceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mikun.PreviewDeviceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PreviewDevice.app/PreviewDevice";
+			};
+			name = Debug;
+		};
+		FF721A6022FEA5780097083B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PreviewDeviceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mikun.PreviewDeviceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PreviewDevice.app/PreviewDevice";
+			};
+			name = Release;
+		};
+		FF721A6122FEA5780097083B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PreviewDeviceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mikun.PreviewDeviceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PreviewDevice;
+			};
+			name = Debug;
+		};
+		FF721A6222FEA5780097083B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PreviewDeviceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mikun.PreviewDeviceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PreviewDevice;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FF1D42BA2327927500D87B74 /* Build configuration list for PBXNativeTarget "BlurView.Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF1D42B82327927500D87B74 /* Debug */,
+				FF1D42B92327927500D87B74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF1D42D0232793E000D87B74 /* Build configuration list for PBXNativeTarget "BlurView.mac.Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF1D42D1232793E000D87B74 /* Debug */,
+				FF1D42D2232793E000D87B74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FF26446822E739790043EAB3 /* Build configuration list for PBXProject "SwiftUI.Extension.Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -376,6 +1106,33 @@
 			buildConfigurations = (
 				FF26449A22E739900043EAB3 /* Debug */,
 				FF26449B22E739900043EAB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF721A6322FEA5780097083B /* Build configuration list for PBXNativeTarget "PreviewDevice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF721A5D22FEA5780097083B /* Debug */,
+				FF721A5E22FEA5780097083B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF721A6422FEA5780097083B /* Build configuration list for PBXNativeTarget "PreviewDeviceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF721A5F22FEA5780097083B /* Debug */,
+				FF721A6022FEA5780097083B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF721A6522FEA5780097083B /* Build configuration list for PBXNativeTarget "PreviewDeviceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF721A6122FEA5780097083B /* Debug */,
+				FF721A6222FEA5780097083B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
