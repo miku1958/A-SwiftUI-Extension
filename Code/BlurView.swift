@@ -38,12 +38,13 @@ extension BlurView {
 		var styles: [UIBlurEffect.Style]
 		switch sort {
 		case .light:
-			styles = [.regular, .systemUltraThinMaterial, .systemThinMaterial, .systemMaterial, .prominent, .systemChromeMaterial, .systemThickMaterial]
+			styles = [.regular, .systemUltraThinMaterial, .systemThinMaterial, .prominent, .systemMaterial, .systemChromeMaterial, .systemThickMaterial]
 		case .dark:
-			styles = [.systemUltraThinMaterial, .systemThinMaterial, .systemMaterial, .systemThickMaterial, .systemChromeMaterial, .regular, .prominent]
+			styles = [.systemUltraThinMaterial, .systemChromeMaterial, .systemThinMaterial, .regular, .systemMaterial, .prominent, .systemThickMaterial]
 		}
 		
 		let index = Int(round(CGFloat(styles.count)) * level)
+		print(index)
 		return styles[max(0, min(styles.count - 1, index))]
 	}
 }

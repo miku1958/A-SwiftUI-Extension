@@ -17,9 +17,10 @@ struct ContentView: View {
 				Color.red
 			}
 			VStack {
-				ZStack { BlurView(level: value, prefer: .dark).frame(width: 200, height: 100) ;Text("popover") }
+				BlurView(level: value, prefer: .dark)
+					.frame(width: 200, height: 100)
 				Slider(value: $value, in: 0...1)
-			}
+			}.colorScheme(.dark)
 		}
 	}
 }

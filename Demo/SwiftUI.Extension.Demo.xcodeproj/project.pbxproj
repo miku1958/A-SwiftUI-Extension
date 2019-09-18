@@ -29,6 +29,12 @@
 		FF2824462326377A00383093 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2824442326372700383093 /* View.swift */; };
 		FF28244A23263A1900383093 /* GeometryProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28244923263A1900383093 /* GeometryProxy.swift */; };
 		FF28244B23263A1900383093 /* GeometryProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28244923263A1900383093 /* GeometryProxy.swift */; };
+		FF329EA7233205F4005B81D8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2824442326372700383093 /* View.swift */; };
+		FF329EA8233205F6005B81D8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2824442326372700383093 /* View.swift */; };
+		FF329EA923320641005B81D8 /* UIKitStyleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD969E23288EC000C67E28 /* UIKitStyleAnimation.swift */; };
+		FF329EAA23320654005B81D8 /* GeometryProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF28244923263A1900383093 /* GeometryProxy.swift */; };
+		FF329EAC2332065B005B81D8 /* SelectionNavigationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B37CC232A441400F1F11A /* SelectionNavigationModifier.swift */; };
+		FF329EAE2332065B005B81D8 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B37C12329DE9D00F1F11A /* LazyView.swift */; };
 		FF721A3922FEA5760097083B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A3822FEA5760097083B /* AppDelegate.swift */; };
 		FF721A3B22FEA5760097083B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A3A22FEA5760097083B /* SceneDelegate.swift */; };
 		FF721A3D22FEA5760097083B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A3C22FEA5760097083B /* ContentView.swift */; };
@@ -47,7 +53,6 @@
 		FF9A53542330C704003C2B61 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9B37C12329DE9D00F1F11A /* LazyView.swift */; };
 		FF9A53552330C704003C2B61 /* PreviewDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF721A6622FEA58D0097083B /* PreviewDevice.swift */; };
 		FF9A53562330C706003C2B61 /* UIKitStyleAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCD969E23288EC000C67E28 /* UIKitStyleAnimation.swift */; };
-		FF9A53572330C709003C2B61 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2824442326372700383093 /* View.swift */; };
 		FF9A53582330C70D003C2B61 /* ViewExpand.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8EFFE22F328630089D8ED /* ViewExpand.swift */; };
 		FF9A53592330C70D003C2B61 /* AnyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8EFFF22F328630089D8ED /* AnyView.swift */; };
 		FF9A535A2330C70D003C2B61 /* AnyViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD8F00022F328630089D8ED /* AnyViewBuilder.swift */; };
@@ -570,11 +575,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF329EAE2332065B005B81D8 /* LazyView.swift in Sources */,
 				FF1D42AA2327927400D87B74 /* AppDelegate.swift in Sources */,
 				FFCD96A223288ECA00C67E28 /* BlurView.swift in Sources */,
+				FF329EA7233205F4005B81D8 /* View.swift in Sources */,
 				FF1D42AC2327927400D87B74 /* SceneDelegate.swift in Sources */,
+				FF329EAA23320654005B81D8 /* GeometryProxy.swift in Sources */,
+				FF329EA923320641005B81D8 /* UIKitStyleAnimation.swift in Sources */,
 				FF1D42AE2327927400D87B74 /* ContentView.swift in Sources */,
 				FF9A534E2330C140003C2B61 /* PreviewDevice.swift in Sources */,
+				FF329EAC2332065B005B81D8 /* SelectionNavigationModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,8 +603,8 @@
 				FF9A53592330C70D003C2B61 /* AnyView.swift in Sources */,
 				FF9A535A2330C70D003C2B61 /* AnyViewBuilder.swift in Sources */,
 				FFCD96A323288ECB00C67E28 /* BlurView.swift in Sources */,
-				FF9A53572330C709003C2B61 /* View.swift in Sources */,
 				FF9A53582330C70D003C2B61 /* ViewExpand.swift in Sources */,
+				FF329EA8233205F6005B81D8 /* View.swift in Sources */,
 				FF9A53522330C704003C2B61 /* SelectionNavigationModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
