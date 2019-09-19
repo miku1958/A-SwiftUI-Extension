@@ -40,7 +40,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 ```
 
-### Add propertyWrapper extension
+### Add DynamicProperty extension
 
 | Name       | Before                                          | After                            |
 | ---------- | ---------------------------------------------------- | -------------------------------- |
@@ -82,4 +82,3 @@ Grid(layout: CustomLayout()) {
 ```
 
 Otherwise, Grid will use UICollectionFlowLayout as default layout
-
