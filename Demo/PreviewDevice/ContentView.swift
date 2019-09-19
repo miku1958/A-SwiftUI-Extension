@@ -62,21 +62,19 @@ struct ContentView: View {
 				.push(self.airDrop)
 		}
 	}
-    var body2: some View {
+    var body: some View {
 		Image("76678634_p0")
 			.resizable()
 			.aspectRatio(contentMode: .fit)
 			.coverScreen(showCover) {
 				self.airDrop
 		}.onTapGesture {
-			withAnimation {
-				self.showCover = true
-			}
+			self._showCover.animation(true)
 		}
 	}
 	@State var selectionIndex: Int?
 	
-	var body: some View {
+	var body3: some View {
 		NavigationView {
 			List(1..<10) { index in
 				Button("\(index)"){

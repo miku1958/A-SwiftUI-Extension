@@ -18,6 +18,8 @@
 		FF1D42C7232793E000D87B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1D42C6232793E000D87B74 /* Assets.xcassets */; };
 		FF1D42CA232793E000D87B74 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1D42C9232793E000D87B74 /* Preview Assets.xcassets */; };
 		FF1D42CD232793E000D87B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1D42CB232793E000D87B74 /* Main.storyboard */; };
+		FF207781233352FA00BB5553 /* AnimationPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF207780233352FA00BB5553 /* AnimationPropertyWrapper.swift */; };
+		FF20778223335A0300BB5553 /* AnimationPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF207780233352FA00BB5553 /* AnimationPropertyWrapper.swift */; };
 		FF26448B22E739900043EAB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF26448A22E739900043EAB3 /* AppDelegate.swift */; };
 		FF26448D22E739900043EAB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF26448C22E739900043EAB3 /* SceneDelegate.swift */; };
 		FF26448F22E739900043EAB3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF26448E22E739900043EAB3 /* ContentView.swift */; };
@@ -104,6 +106,7 @@
 		FF1D42CC232793E000D87B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF1D42CE232793E000D87B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1D42CF232793E000D87B74 /* BlurView_mac_Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlurView_mac_Demo.entitlements; sourceTree = "<group>"; };
+		FF207780233352FA00BB5553 /* AnimationPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPropertyWrapper.swift; sourceTree = "<group>"; };
 		FF26448822E739900043EAB3 /* Grid.Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grid.Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF26448A22E739900043EAB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF26448C22E739900043EAB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -294,6 +297,7 @@
 				FFD8EFFD22F328630089D8ED /* Replace.Do Not Use This File.It may change name if necessary */,
 				FFCD969E23288EC000C67E28 /* UIKitStyleAnimation.swift */,
 				FF2824442326372700383093 /* View.swift */,
+				FF207780233352FA00BB5553 /* AnimationPropertyWrapper.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -620,6 +624,7 @@
 				FF721A6722FEA58D0097083B /* PreviewDevice.swift in Sources */,
 				FFD8F00422F328630089D8ED /* AnyView.swift in Sources */,
 				FF26448D22E739900043EAB3 /* SceneDelegate.swift in Sources */,
+				FF207781233352FA00BB5553 /* AnimationPropertyWrapper.swift in Sources */,
 				FF26448F22E739900043EAB3 /* ContentView.swift in Sources */,
 				FFCD96A023288EC100C67E28 /* UIKitStyleAnimation.swift in Sources */,
 				FF2644AC22E73A230043EAB3 /* Character.swift in Sources */,
@@ -636,6 +641,7 @@
 				FF28244B23263A1900383093 /* GeometryProxy.swift in Sources */,
 				FFCD96A423288ECD00C67E28 /* BlurView.swift in Sources */,
 				FF721A6822FEA58D0097083B /* PreviewDevice.swift in Sources */,
+				FF20778223335A0300BB5553 /* AnimationPropertyWrapper.swift in Sources */,
 				FFCD96A523288ED200C67E28 /* UIKitStyleAnimation.swift in Sources */,
 				FF721A3922FEA5760097083B /* AppDelegate.swift in Sources */,
 				FF2824462326377A00383093 /* View.swift in Sources */,
