@@ -42,9 +42,9 @@ struct ContentView_Previews: PreviewProvider {
 
 ### Add propertyWrapper extension
 
-| Name       | Description                                          | Usage                            |
+| Name       | Before                                          | After                            |
 | ---------- | ---------------------------------------------------- | -------------------------------- |
-| .aniamtion | withAnimation {<br/>	self.stateValue = true<br/>} | self._stateValue.animation(true) |
+| .aniamtion | withAnimation {<br/>    self.stateValue = true<br/>} | self._stateValue.animation(true) |
 
 ## Version 0.1
 
