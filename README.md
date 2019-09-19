@@ -10,7 +10,7 @@ A SwiftUI extension
 | addBorder        | Add a border like beta1                                      | .addBorder(Color.red)                                 |
 | consideConfig    | Set the view using branches                                  | .consideConfig(boolValue, true: {view}, false:{view}) |
 | considerModifier | Set the viewModifier using branches                          | .considerModifier(boolValue, true: {vm}, false:{vm})  |
-| coverScreen      | Cover A fullscreen view above any view like present in UIKit | .cover(activeBool, backgroundColor: .black, {view})   |
+| coverScreen      | Cover A fullscreen view above any view like present in UIKit | .coverScreen(activeBool, backgroundColor: .black, {view})   |
 | doAnimation      | Do animation like UIKit when appear                          | `.doAnimation { $0.opacity($1 ? 0 : 1) }`             |
 | centered         | put the view to HStack/VStack 's center by adding Spacer()   | .centered()                                           |
 | push             | fast use NavigationLink add lazy load Destination View, bascily has same API | .push(destinationView)                                |
