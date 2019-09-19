@@ -40,6 +40,12 @@ struct ContentView_Previews: PreviewProvider {
 }
 ```
 
+### Add propertyWrapper extension
+
+| Name       | Description                                          | Usage                            |
+| ---------- | ---------------------------------------------------- | -------------------------------- |
+| .aniamtion | withAnimation {<br/>	self.stateValue = true<br/>} | self._stateValue.animation(true) |
+
 ## Version 0.1
 
 ### Grid implemented by UICollectionView
